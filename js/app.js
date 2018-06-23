@@ -2,6 +2,7 @@ let All = []
 let Active = []
 let complited = [];
 
+
 (function (window) {
 	'use strict';
 
@@ -12,20 +13,23 @@ let txtFromField = txtField.value;
 
 
 function render() {
+	 All = [];
+	 All = JSON.parse(localStorage.getItem('allLi'))
+	 console.log('before render' + All)
 
-
-	All = JSON.parse(localStorage.getItem('AllLi'))
 	if (All == null) {
+		All = []
 		console.log('local to')
-		localStorage.setItem('allLi', '[""]')
-		All = localStorage.getItem('allLi')
+		localStorage.setItem('allLi', JSON.stringify(All))
+		All = JSON.parse(localStorage.getItem('allLi'))
 	}
 	else {
-		All = JSON.parse(All)
+
 		All.forEach( (element) => {
 			createLi(element)
 		});
 	}
+	console.log('after render' + All)
     //переводим с строки в масив (убираем "" там где было "[Значения]")
 
 }
@@ -46,8 +50,9 @@ function createLi(txt){
 	let bttnDel = li.querySelector('button')
 
 	ul.appendChild(li)
-	let All = JSON.parse(localStorage.getItem('allLi'))
-	All.push(txt);
+	All = [];
+	All = JSON.parse(localStorage.getItem('allLi'))
+
 	localStorage.setItem('allLi', JSON.stringify(All))
 	li.addEventListener('click', (e) => {
 		if (e.target == bttnDel) {
@@ -64,6 +69,7 @@ function createLi(txt){
 			  })
 			  console.log( Som)
 			  All = Som
+			  localStorage.setItem('allLi', JSON.stringify(All))
 			  console.log(All)
 
 		}
@@ -83,6 +89,8 @@ document.addEventListener('keydown' , (e) => {
 	else{
 		 txtField = document.querySelector('#txtField')
 		 txtFromField = txtField.value;
+		 All.push(txtFromField);
+		 localStorage.setItem('allLi', JSON.stringify(All));
 		 createLi(txtFromField)
 	}
 })
