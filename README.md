@@ -1,33 +1,24 @@
-# Framework Name • [TodoMVC](http://todomvc.com)
+# Шаблон • [TodoMVC](http://todomvc.com)
 
-> Official description of the framework (from its website)
-
-
-## Resources
-
-- [Website]()
-- [Documentation]()
-- [Used by]()
-- [Blog]()
-- [FAQ]()
-
-### Articles
-
-- [Interesting article]()
-
-### Support
-
-- [Stack Overflow](http://stackoverflow.com/questions/tagged/__)
-- [Google Groups]()
-- [Twitter](http://twitter.com/__)
-- [Google+]()
-
-*Let us [know](https://github.com/tastejs/todomvc/issues) if you discover anything worth sharing.*
+<img src = "res/Main.png" />
 
 
-## Implementation
+## Как это работает
 
-How was the app created? Anything worth sharing about the process of creating the app? Any spec violations?
+Заметки сохраняются в 3 массива
+
+```javascript
+let All = []
+let Active = []
+let complited = []
+```
+
+---
+
+Массивы сохраняются в LoclaStorage
+
+<img src = "res/localStorage.png" />
+
 
 
 ## Credit
