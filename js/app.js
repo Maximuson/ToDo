@@ -3,6 +3,7 @@ let Active = []
 let complited = [];
 
 
+
 (function (window) {
 	'use strict';
 
@@ -13,6 +14,8 @@ let txtFromField = txtField.value;
 
 
 function render() {
+	let ul = document.querySelector('ul')
+	ul.innerHTML = '';
 	 All = [];
 	 All = JSON.parse(localStorage.getItem('allLi'))
 	 console.log('before render' + All)
@@ -94,7 +97,9 @@ document.addEventListener('keydown' , (e) => {
 		 createLi(txtFromField)
 	}
 })
-
+document.addEventListener('click' , (e) => {
+	console.log(e.target)
+})
 
 
 })(window);
