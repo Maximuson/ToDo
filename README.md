@@ -1,4 +1,6 @@
-# Framework Name • [TodoMVC](http://todomvc.com)
+# Шаблон • [TodoMVC](http://todomvc.com)
+
+## Как это работает
 
 Заметки сохраняются в 3 массива
 
@@ -8,7 +10,11 @@ let Active = []
 let complited = []
 ```
 
-эти же массивы сохраняются в LoclaStorage
+---
+
+Массивы сохраняются в LoclaStorage
+
+
 
 ## Credit
 
